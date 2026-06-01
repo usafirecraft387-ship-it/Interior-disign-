@@ -27,38 +27,38 @@ export const Testimonials = () => {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-32 bg-ivory text-obsidian relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-ivory text-obsidian relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-sand" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
-        <Quote className="w-12 h-12 text-gold/30 mx-auto mb-12" />
+        <Quote className="w-10 h-10 md:w-12 md:h-12 text-gold/30 mx-auto mb-10 md:mb-16" />
         
-        <div className="relative h-[250px] md:h-[200px] flex items-center justify-center max-w-4xl mx-auto">
+        <div className="relative h-[300px] sm:h-[250px] md:h-[200px] flex items-center justify-center max-w-4xl mx-auto">
           <AnimatePresence mode='wait'>
             <motion.div
               key={current}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
-              <h3 className="text-2xl md:text-4xl font-serif italic font-light leading-relaxed mb-8">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif italic font-light leading-relaxed mb-8 text-charcoal">
                 "{testimonials[current].quote}"
               </h3>
-              <div>
-                <p className="font-medium tracking-wide uppercase text-sm mb-1">{testimonials[current].author}</p>
-                <p className="text-gold tracking-widest uppercase text-xs">{testimonials[current].project}</p>
+              <div className="mt-auto md:mt-4">
+                <p className="font-medium tracking-widest uppercase text-[10px] md:text-xs mb-1">{testimonials[current].author}</p>
+                <p className="text-gold tracking-widest uppercase text-[10px] md:text-xs">{testimonials[current].project}</p>
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        <div className="flex items-center justify-center gap-6 mt-16">
-          <button onClick={prev} className="w-12 h-12 rounded-full border border-sand flex items-center justify-center hover:bg-obsidian hover:border-obsidian hover:text-white transition-all">
+        <div className="flex items-center justify-center gap-6 mt-12 md:mt-20">
+          <button onClick={prev} className="w-12 h-12 rounded-full border border-obsidian/20 flex items-center justify-center hover:bg-obsidian hover:border-obsidian hover:text-white transition-all duration-300">
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <button onClick={next} className="w-12 h-12 rounded-full border border-sand flex items-center justify-center hover:bg-obsidian hover:border-obsidian hover:text-white transition-all">
+          <button onClick={next} className="w-12 h-12 rounded-full border border-obsidian/20 flex items-center justify-center hover:bg-obsidian hover:border-obsidian hover:text-white transition-all duration-300">
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>

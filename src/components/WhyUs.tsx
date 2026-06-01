@@ -13,10 +13,10 @@ const pillars = [
 
 export const WhyUs = () => {
   return (
-    <section id="expertise" className="py-32 bg-obsidian text-ivory">
+    <section id="expertise" className="py-24 md:py-32 bg-obsidian text-ivory">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -30,25 +30,25 @@ export const WhyUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-serif mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 leading-tight"
           >
             The Distinction of Excellence
           </motion.h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-white/5 mx-auto max-w-6xl">
           {pillars.map((pillar, idx) => (
             <motion.div 
               key={idx}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="p-12 border-r border-b border-white/10 hover:bg-white/5 transition-colors duration-500 group"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="p-10 md:p-12 border-r border-b border-white/5 hover:bg-white/5 transition-colors duration-500 group"
             >
-              <pillar.icon className="w-8 h-8 text-gold mb-8 stroke-[1.5] group-hover:-translate-y-1 transition-transform" />
+              <pillar.icon className="w-8 h-8 text-gold mb-8 stroke-[1.5] group-hover:-translate-y-2 transition-transform duration-500" />
               <h4 className="text-xl font-serif mb-4">{pillar.title}</h4>
-              <p className="text-gray-400 font-light leading-relaxed">{pillar.desc}</p>
+              <p className="text-gray-400 font-light leading-relaxed text-sm md:text-base">{pillar.desc}</p>
             </motion.div>
           ))}
         </div>

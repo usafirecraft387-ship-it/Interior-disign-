@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Image } from './Image';
+import { ArrowRight } from 'lucide-react';
 
 const steps = [
   {
@@ -30,25 +32,36 @@ export const CaseStudy = () => {
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <h2 className="text-gold tracking-[0.2em] uppercase text-xs font-semibold mb-4">Deep Dive</h2>
-          <h3 className="text-4xl md:text-5xl font-serif mb-6">The Emirates Hills Estate</h3>
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 leading-tight">The Emirates Hills Estate</h3>
           <p className="text-gray-400 font-light text-lg">An inside look at our methodology and commitment to perfection.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-16"
+            className="space-y-12 md:space-y-16"
           >
             {steps.map((step, idx) => (
-              <div key={idx} className="relative pl-10 md:pl-16">
-                <span className="absolute left-0 top-0 text-xl font-serif text-gold opacity-50">{step.num}</span>
-                <h4 className="text-2xl font-serif mb-4">{step.title}</h4>
+              <div key={idx} className="relative pl-10 md:pl-16 group">
+                <span className="absolute left-0 top-0 text-xl font-serif text-gold opacity-50 group-hover:opacity-100 transition-opacity duration-300">{step.num}</span>
+                <h4 className="text-2xl font-serif mb-4 group-hover:text-gold transition-colors duration-300">{step.title}</h4>
                 <p className="text-gray-400 font-light leading-relaxed">{step.desc}</p>
               </div>
             ))}
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="pl-10 md:pl-16 pt-8"
+            >
+              <a href="#casestudy" className="inline-flex items-center gap-4 text-white uppercase tracking-widest text-sm font-medium border-b border-white/30 pb-1 hover:text-gold hover:border-gold transition-all duration-300">
+                View Case Study <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
           </motion.div>
 
           <motion.div 
@@ -58,10 +71,10 @@ export const CaseStudy = () => {
             transition={{ duration: 1 }}
             className="relative h-[60vh] lg:h-[80vh] w-full"
           >
-            <img 
+            <Image 
               src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop" 
               alt="Case Study Interior"
-              className="absolute inset-0 w-full h-full object-cover rounded-sm"
+              className="w-full h-full"
             />
             {/* Elegant overlay accents */}
             <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-gold/50" />

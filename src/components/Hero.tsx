@@ -66,14 +66,11 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.1 }}
-            className="flex flex-col sm:flex-row gap-6 items-start sm:items-center"
+            className="flex flex-col sm:flex-row gap-6 items-start sm:items-center mt-8"
           >
-            <a href="#projects" className="group flex items-center gap-4 bg-white text-obsidian px-8 py-4 hover:bg-gold hover:text-white transition-all duration-300">
-              <span className="uppercase tracking-widest text-sm font-medium">View Signature Projects</span>
+            <a href="#consultation" className="group flex items-center gap-4 bg-white text-obsidian px-8 py-5 hover:bg-gold hover:text-white transition-all duration-300">
+              <span className="uppercase tracking-widest text-sm font-medium">Book Consultation</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href="#consultation" className="group flex items-center gap-4 px-8 py-4 border border-white/30 hover:border-gold hover:text-gold transition-all duration-300">
-              <span className="uppercase tracking-widest text-sm font-medium">Book Design Consultation</span>
             </a>
           </motion.div>
         </motion.div>
@@ -84,17 +81,19 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/20 backdrop-blur-sm hidden md:block"
+        className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-black/20 backdrop-blur-sm hidden lg:block"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
-          <div className="flex justify-between items-center text-xs tracking-widest uppercase text-gray-300">
-            <span>20+ Years Experience</span>
-            <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
-            <span>Dubai Based Studio</span>
-            <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
-            <span>Residential & Commercial</span>
-            <span className="w-1.5 h-1.5 bg-gold rounded-full"></span>
-            <span>International Standards</span>
+          <div className="flex justify-between items-center text-[10px] xl:text-xs tracking-widest uppercase text-gray-300">
+            <span>Established Since 2003</span>
+            <span className="w-1 h-1 bg-gold rounded-full"></span>
+            <span>100K+ Instagram Community</span>
+            <span className="w-1 h-1 bg-gold rounded-full"></span>
+            <span>Lux Residential & Corporate</span>
+            <span className="w-1 h-1 bg-gold rounded-full"></span>
+            <span>Dubai Based</span>
+            <span className="w-1 h-1 bg-gold rounded-full"></span>
+            <span>Intl. Design Standards</span>
           </div>
         </div>
       </motion.div>
