@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  --color-gold: #c6a87c;
+  --color-gold-dark: #b09265;
+  --color-ivory: #F9F9F6;
+  --color-obsidian: #0a0a0a;
+  --color-charcoal: #1a1a1a;
+  --color-sand: #E6DFD4;
+}
+
+body {
+  @apply bg-ivory text-charcoal font-sans antialiased overflow-x-hidden;
+  selection-background-color: var(--color-gold);
+  selection-color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-charcoal); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold); 
+}
+
+img {
+  @apply object-cover;
+}
