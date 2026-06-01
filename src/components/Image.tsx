@@ -28,4 +28,3 @@ export const Image = ({ src, alt, className, fallbackSrc = 'https://images.unspl
     </div>
   );
 };
-⅙
